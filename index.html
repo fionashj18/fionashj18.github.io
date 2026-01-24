@@ -8,21 +8,26 @@
 <body>
 
 <div class="hero">
-    <img src="{{ url_for('static', filename='profile.jpg') }}" class="hero-pic">
 
-    <h1>Fiona Shi</h1>
+    <div class="hero-text">
+        <h1>Fiona Shi</h1>
+        <p>
+            I’m a student interested in computer science, problem-solving,
+            and building thoughtful, well-designed projects that combine
+            creativity with technical skill.
+        </p>
 
-    <p class="hero-bio">
-        I’m a student interested in computer science, problem-solving,
-        and building things that are both creative and meaningful.
-    </p>
-    
-
-    <div class="hero-buttons">
-        <a href="/projects">Projects</a>
-        <a href="/experience">Experience</a>
-        <a href="/contact">Contact</a>
+        <div class="hero-buttons">
+            <a href="/projects">PROJECTS</a>
+            <a href="/experience">EXPERIENCE</a>
+            <a href="/contact">CONTACT</a>
+        </div>
     </div>
+
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='profile.jpg') }}" class="hero-pic">
+    </div>
+
 </div>
 
 </body>

@@ -1,17 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Projects</title>
+    <meta charset="UTF-8">
+    <title>Projects | Fiona Shi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body class="page">
-    <h1>Projects</h1>
-    <ul>
-        <li>Fireboy & Watergirl style Python game</li>
-        <li>Algorithmic number filtering project</li>
-        <li>BreadRobot competition robot design</li>
-    </ul>
 
-    <a href="/">← Back Home</a>
+<h1>Projects</h1>
+
+<div class="projects">
+
+    <div class="project-card">
+        <h2>Fireboy & Watergirl–Style Platformer</h2>
+        <p class="project-meta">Python • cmu_graphics • Game Design</p>
+
+        <p>
+            A two-character puzzle platformer inspired by Fireboy and Watergirl.
+            Built using Python and cmu_graphics, featuring collision mechanics,
+            level logic, character abilities, and background music. The project
+            emphasizes game state management and clean program structure.
+        </p>
+
+        <a href="https://github.com/yourusername/fireboy-watergirl-project"
+           class="project-button"
+           target="_blank">
+            View on GitHub →
+        </a>
+    </div>
+
+    <div class="project-card">
+        <h2>Rule-Based Number Filtering System</h2>
+        <p class="project-meta">Python • Algorithms</p>
+
+        <p>
+            Developed a modular number filtering system that applies custom rules
+            to efficiently process values, with a focus on edge cases and testability.
+        </p>
+    </div>
+
+    <div class="project-card">
+        <h2>BreadRobot Competition Robot Design</h2>
+        <p class="project-meta">Robotics • Mechanical Design</p>
+
+        <p>
+            Contributed to a competitive robot design, exploring forklift-style
+            mechanisms to optimize object manipulation and scoring efficiency.
+        </p>
+    </div>
+
+</div>
+
+<a href="/">← Back Home</a>
+
 </body>
 </html>
