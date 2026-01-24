@@ -1,29 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fiona Shi</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="hero">
-    <img src="{{ url_for('static', filename='profile.jpg') }}">
-    <h1>Fiona Shi</h1>
-    <h2>Software Engineer</h2>
-    <p>
-        Student engineer with interests in computer science, game development,
-        and problem-solving. Passionate about building thoughtful, well-designed
-        technical projects.
-    </p>
+  <main class="home">
+    <section class="hero">
+      <h1>Hello, I'm [Your Name]</h1>
+      <p>Frontend Developer | UI/UX Enthusiast | Web Creator</p>
+      <a class="btn" href="work.html">See My Work</a>
+    </section>
+  </main>
 
-    <div class="nav">
-        <a href="/">About Me</a>
-        <a href="/experience">Work Experience</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
-    </div>
-    
-</div>
-
+  <footer>
+    <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+  </footer>
 </body>
 </html>
