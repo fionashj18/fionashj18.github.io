@@ -1,57 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Projects | Fiona Shi</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="page">
+<body>
 
-<h1>Projects</h1>
+<div class="page">
+    <h1>Projects</h1>
+    <div class="underline"></div>
 
-<div class="projects">
-
-    <div class="project-card">
+    <div class="card">
         <h2>Fireboy & Watergirl–Style Platformer</h2>
-        <p class="project-meta">Python • cmu_graphics • Game Design</p>
-
         <p>
-            A two-character puzzle platformer inspired by Fireboy and Watergirl.
-            Built using Python and cmu_graphics, featuring collision mechanics,
-            level logic, character abilities, and background music. The project
-            emphasizes game state management and clean program structure.
+            Built a two-character puzzle platformer using Python and cmu_graphics.
+            Implemented collision detection, character abilities, level logic,
+            and background music. Focused on clean architecture and interactive gameplay.
         </p>
 
-        <a href="https://github.com/yourusername/fireboy-watergirl-project"
-           class="project-button"
+        <a class="card-button"
+           href="https://github.com/yourusername/fireboy-watergirl-project"
            target="_blank">
-            View on GitHub →
+            View
         </a>
     </div>
 
-    <div class="project-card">
+    <div class="card">
         <h2>Rule-Based Number Filtering System</h2>
-        <p class="project-meta">Python • Algorithms</p>
-
         <p>
-            Developed a modular number filtering system that applies custom rules
-            to efficiently process values, with a focus on edge cases and testability.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h2>BreadRobot Competition Robot Design</h2>
-        <p class="project-meta">Robotics • Mechanical Design</p>
-
-        <p>
-            Contributed to a competitive robot design, exploring forklift-style
-            mechanisms to optimize object manipulation and scoring efficiency.
+            Designed a modular Python system to filter numbers using custom rules.
+            Emphasized flexibility, edge-case handling, and algorithmic clarity.
         </p>
     </div>
 
 </div>
-
-<a href="/">← Back Home</a>
 
 </body>
 </html>

@@ -1,33 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Fiona Shi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <div class="hero">
+    <img src="{{ url_for('static', filename='profile.jpg') }}">
+    <h1>Fiona Shi</h1>
+    <h2>Software Engineer</h2>
+    <p>
+        Student engineer with interests in computer science, game development,
+        and problem-solving. Passionate about building thoughtful, well-designed
+        technical projects.
+    </p>
 
-    <div class="hero-text">
-        <h1>Fiona Shi</h1>
-        <p>
-            I’m a student interested in computer science, problem-solving,
-            and building thoughtful, well-designed projects that combine
-            creativity with technical skill.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="/projects">PROJECTS</a>
-            <a href="/experience">EXPERIENCE</a>
-            <a href="/contact">CONTACT</a>
-        </div>
+    <div class="nav">
+        <a href="/">About Me</a>
+        <a href="/experience">Work Experience</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact">Contact</a>
     </div>
-
-    <div class="hero-image">
-        <img src="{{ url_for('static', filename='profile.jpg') }}" class="hero-pic">
-    </div>
-
 </div>
 
 </body>
