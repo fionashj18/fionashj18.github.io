@@ -1,43 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: #f7f7f7;
-    color: #333; 
-    
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f5f2; /* off-white */
+    color: #111;
 }
 
-.header {
+/* Full screen landing section */
+.hero {
+    height: 100vh;
+    background-color: #f5f5f2;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
 }
 
-.profile-pic {
-    width: 150px;
+.hero-pic {
+    width: 180px;
     border-radius: 50%;
+    margin-bottom: 30px;
+    border: 2px solid #111;
 }
 
-.bio h1 {
-    margin-bottom: 10px;
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
-.buttons {
-    margin: 30px 0;
+.hero-bio {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: #333;
 }
 
-.buttons a {
-    margin-right: 15px;
-    padding: 10px 20px;
-    background-color: #222;
-    color: white;
+.hero-buttons a {
+    margin: 0 12px;
+    padding: 12px 26px;
+    background-color: #111;
+    color: #f5f5f2;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 999px;
+    font-weight: 500;
+    transition: all 0.25s ease;
 }
 
-.buttons a:hover {
-    background-color: #555;
+.hero-buttons a:hover {
+    background-color: #333;
+    transform: translateY(-2px);
 }
 
-section {
-    margin-top: 50px;
+/* Secondary pages */
+.page {
+    padding: 80px;
+}
+
+.page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.page a {
+    display: inline-block;
+    margin-top: 40px;
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
 }

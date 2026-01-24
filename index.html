@@ -7,47 +7,22 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <div class="header">
-        <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile Photo" class="profile-pic">
-        <div class="bio">
-            <h1>Fiona Shi</h1>
-            <p>
-                Hi! I’m Fiona, a student studying Electircal and Computer Enginnering. 
-                I enjoy learning new technologies and challenging myself creatively.
-            </p>
-        </div>
+<div class="hero">
+    <img src="{{ url_for('static', filename='profile.jpg') }}" class="hero-pic">
+
+    <h1>Fiona Shi</h1>
+
+    <p class="hero-bio">
+        I’m a student interested in computer science, problem-solving,
+        and building things that are both creative and meaningful.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="/projects">Projects</a>
+        <a href="/experience">Experience</a>
+        <a href="/contact">Contact</a>
     </div>
-
-    <!-- Navigation Buttons -->
-    <div class="buttons">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Work Experience</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <!-- Sections -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>Fireboy and Watergirl-style Python game</li>
-            <li>Rule-based number filtering program</li>
-            <li>BreadRobot competition robot design</li>
-        </ul>
-    </section>
-
-    <section id="experience">
-        <h2>Work Experience</h2>
-        <p>
-            Hackathon organizer, panel event coordinator, and student tech volunteer.
-        </p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: fiona@example.com</p>
-        <p>GitHub: github.com/yourusername</p>
-    </section>
+</div>
 
 </body>
 </html>
