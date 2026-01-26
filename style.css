@@ -131,6 +131,25 @@ main {
 /* Hero Section */
 .hero {
   padding: 60px 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .hero-intro {
@@ -382,6 +401,17 @@ footer p {
 
   .hero {
     padding: 40px 0 60px;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero-description {
+    max-width: 100%;
   }
 
   .card:hover {
