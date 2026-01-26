@@ -1,39 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Projects</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Fiona</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Fiona</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<div class="page">
-    <h1>Projects</h1>
-    <div class="underline"></div>
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>Projects</h1>
+        <p>A selection of things I've built.</p>
+      </div>
 
-    <div class="card">
-        <h2>Fireboy & Watergirl–Style Platformer</h2>
-        <p>
+      <section class="section" style="border-top: none; padding-top: 32px;">
+        <div class="card">
+          <div class="card-header">
+            <h2>Fireboy & Watergirl Platformer</h2>
+            <span class="card-meta">Python</span>
+          </div>
+          <p>
             Built a two-character puzzle platformer using Python and cmu_graphics.
             Implemented collision detection, character abilities, level logic,
             and background music. Focused on clean architecture and interactive gameplay.
-        </p>
+          </p>
+          <a class="card-link" href="https://github.com/yourusername/fireboy-watergirl-project" target="_blank">View on GitHub</a>
+        </div>
 
-        <a class="card-button"
-           href="https://github.com/yourusername/fireboy-watergirl-project"
-           target="_blank">
-            View
-        </a>
-    </div>
-
-    <div class="card">
-        <h2>Rule-Based Number Filtering System</h2>
-        <p>
+        <div class="card">
+          <div class="card-header">
+            <h2>Rule-Based Number Filtering System</h2>
+            <span class="card-meta">Python</span>
+          </div>
+          <p>
             Designed a modular Python system to filter numbers using custom rules.
             Emphasized flexibility, edge-case handling, and algorithmic clarity.
-        </p>
+          </p>
+        </div>
+      </section>
     </div>
+  </main>
 
-</div>
-
+  <footer>
+    <div class="container">
+      <p>2026 Fiona Shi</p>
+      <div class="footer-links">
+        <a href="mailto:fiona@example.com">Email</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

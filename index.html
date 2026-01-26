@@ -1,34 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--Used Claude Code to create the boilerplate code for each file-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <title>Fiona | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work.html">Work Experience</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <a href="index.html" class="logo">Fiona</a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="home">
-    <section class="hero">
-      <h1>Hello, I'm [Your Name]</h1>
-      <p>Frontend Developer | UI/UX Enthusiast | Web Creator</p>
-      <a class="btn" href="work.html">See My Work</a>
-    </section>
+  <main>
+    <div class="container">
+      <section class="hero">
+        <p class="hero-intro">Hi, I'm</p>
+        <h1>Fiona Shi</h1>
+        <p class="hero-description">
+          ECE undergrad at Carnegie Mellon University.
+        </p>
+        <a class="btn" href="projects.html" style="margin-top: 32px;">View Projects</a>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <span class="section-title">Selected Work</span>
+          <a href="experience.html" class="card-link" style="margin-top: 0;">All Experience</a>
+        </div>
+
+        <div class="card">
+          <h2>Hackathon Organizer</h2>
+          <p>Coordinated judges and speakers, created promotional materials, and ensured smooth event execution for student hackathons.</p>
+        </div>
+
+        <div class="card">
+          <h2>Student Tech Volunteer</h2>
+          <p>Assisted with event logistics, technical setup, and panel coordination for school and community programs.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <span class="section-title">Projects</span>
+          <a href="projects.html" class="card-link" style="margin-top: 0;">All Projects</a>
+        </div>
+
+        <div class="card">
+          <h2>Fireboy & Watergirl Platformer</h2>
+          <p>Two-character puzzle platformer built with Python and cmu_graphics. Features collision detection, character abilities, and level logic.</p>
+          <a class="card-link" href="https://github.com/yourusername/fireboy-watergirl-project" target="_blank">View on GitHub</a>
+        </div>
+
+        <div class="card">
+          <h2>Rule-Based Number Filtering System</h2>
+          <p>Modular Python system for filtering numbers using custom rules. Emphasizes flexibility and algorithmic clarity.</p>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+    <div class="container">
+      <p>2026 Fiona Shi</p>
+      <div class="footer-links">
+        <a href="mailto:fiona@example.com">Email</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:lightfield.app)",
+      "WebFetch(domain:www.semiotic.com)"
+    ]
+  }
+}

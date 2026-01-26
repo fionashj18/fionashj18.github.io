@@ -1,32 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Experience</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience | Fiona</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Fiona</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="experience.html" class="active">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<div class="page">
-    <h1>Work Experience</h1>
-    <div class="underline"></div>
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>Experience</h1>
+        <p>My professional journey and contributions.</p>
+      </div>
 
-    <div class="card">
-        <h2>Hackathon Organizer</h2>
-        <p>
+      <section class="section" style="border-top: none; padding-top: 32px;">
+        <div class="card">
+          <div class="card-header">
+            <h2>Hackathon Organizer</h2>
+            <span class="card-meta">2024 - Present</span>
+          </div>
+          <p>
             Coordinated judges and speakers, created promotional materials,
             and ensured smooth event execution for student hackathons.
-        </p>
-    </div>
+            Managed logistics for 100+ participants across multiple events.
+          </p>
+        </div>
 
-    <div class="card">
-        <h2>Student Tech Volunteer</h2>
-        <p>
+        <div class="card">
+          <div class="card-header">
+            <h2>Student Tech Volunteer</h2>
+            <span class="card-meta">2023 - 2024</span>
+          </div>
+          <p>
             Assisted with event logistics, technical setup, and panel coordination
-            for school and community programs.
-        </p>
+            for school and community programs. Supported speakers and ensured
+            seamless audiovisual presentations.
+          </p>
+        </div>
+      </section>
     </div>
-</div>
+  </main>
 
-
+  <footer>
+    <div class="container">
+      <p>2026 Fiona Shi</p>
+      <div class="footer-links">
+        <a href="mailto:fiona@example.com">Email</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
