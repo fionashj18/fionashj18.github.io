@@ -191,6 +191,7 @@
 
       input.value = '';
       sendBtn.disabled = true;
+      sendBtn.textContent = 'Connecting...';
       hideError();
 
       messages.push({ role: 'user', content: text });
@@ -198,7 +199,7 @@
 
       try {
         const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 90000); // 90s for Render cold start
+        const timeoutId = setTimeout(() => controller.abort(), 120000); // 2 min for Render cold start
 
         const res = await fetch(`${API_URL}/chat`, {
           method: 'POST',
@@ -207,7 +208,7 @@
           signal: controller.signal,
         });
 
-        clearTimeout(timeout);
+        clearTimeout(timeoutId);
 
         const data = await res.json();
 
@@ -219,12 +220,13 @@
         appendMessage('assistant', data.reply);
       } catch (err) {
         const msg = err.name === 'AbortError'
-          ? 'Request timed out. Render free tier may be waking up—try again in a few seconds.'
+          ? 'Server is waking up—the first message can take 1–2 minutes. Try again!'
           : (err.message || 'Could not reach the chat server. Check that the backend is deployed and the URL is correct.');
         showError(msg);
         messages.pop(); // Remove the user message so they can retry
       } finally {
         sendBtn.disabled = false;
+        sendBtn.textContent = 'Send';
       }
     });
 
