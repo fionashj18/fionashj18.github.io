@@ -197,11 +197,17 @@
       appendMessage('user', text);
 
       try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 90000); // 90s for Render cold start
+
         const res = await fetch(`${API_URL}/chat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ messages }),
+          signal: controller.signal,
         });
+
+        clearTimeout(timeout);
 
         const data = await res.json();
 
@@ -212,7 +218,10 @@
         messages.push({ role: 'assistant', content: data.reply });
         appendMessage('assistant', data.reply);
       } catch (err) {
-        showError(err.message || 'Could not reach the chat server. Make sure the backend is deployed on Render.');
+        const msg = err.name === 'AbortError'
+          ? 'Request timed out. Render free tier may be waking up—try again in a few seconds.'
+          : (err.message || 'Could not reach the chat server. Check that the backend is deployed and the URL is correct.');
+        showError(msg);
         messages.pop(); // Remove the user message so they can retry
       } finally {
         sendBtn.disabled = false;
