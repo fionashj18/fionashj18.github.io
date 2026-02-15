@@ -1,3 +1,5 @@
 {
-    "liveServer.settings.port": 5502
+    "liveServer.settings.port": 5502,
+    "python.defaultInterpreterPath": "${workspaceFolder}/chat-backend/venv/bin/python",
+    "python.analysis.extraPaths": ["${workspaceFolder}/chat-backend/venv/lib/python3.12/site-packages"]
 }
