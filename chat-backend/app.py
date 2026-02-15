@@ -1,7 +1,7 @@
 """
-Chat backend for "Chat with Fiona" - uses Google Gemini API.
+Chat backend for "Chat with Fiona" - uses Groq API (Llama).
 Deploy to Render.com as a Web Service.
-Set GEMINI_API_KEY in Render Environment Variables.
+Set GROQ_API_KEY in Render Environment Variables.
 """
 
 import os
@@ -20,31 +20,23 @@ If asked about yourself, draw from this: you're into tech, building things, and 
 Don't pretend to browse the web or access real-time info—just chat naturally."""
 
 
-def get_gemini_response(messages: list[dict]) -> str:
-    """Send conversation to Gemini and return the model's reply."""
-    import google.generativeai as genai
+def get_groq_response(messages: list[dict]) -> str:
+    """Send conversation to Groq and return the model's reply."""
+    from groq import Groq
 
-    api_key = os.environ.get("GEMINI_API_KEY")
+    api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
-        raise ValueError("GEMINI_API_KEY environment variable is not set")
+        raise ValueError("GROQ_API_KEY environment variable is not set")
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(
-        model_name="gemini-2.0-flash",
-        system_instruction=SYSTEM_PROMPT,
+    client = Groq(api_key=api_key)
+    groq_messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+    groq_messages.extend([{"role": m["role"], "content": m["content"]} for m in messages])
+
+    response = client.chat.completions.create(
+        messages=groq_messages,
+        model="llama-3.3-70b-versatile",
     )
-
-    # Build chat history for Gemini (user/model alternation)
-    # Last message must be from user - we send that via send_message
-    history = []
-    for msg in messages[:-1]:
-        role = "user" if msg["role"] == "user" else "model"
-        history.append({"role": role, "parts": [msg["content"]]})
-
-    chat = model.start_chat(history=history)
-    last_msg = messages[-1] if messages else {"content": "Hi!"}
-    response = chat.send_message(last_msg["content"])
-    return response.text
+    return response.choices[0].message.content
 
 
 @app.route("/health", methods=["GET"])
@@ -81,7 +73,7 @@ def chat():
             return jsonify({"error": "Last message must be from the user"}), 400
 
         normalized = [{"role": m["role"], "content": m["content"].strip()} for m in messages]
-        reply = get_gemini_response(normalized)
+        reply = get_groq_response(normalized)
 
         return jsonify({"reply": reply})
 
