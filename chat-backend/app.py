@@ -9,7 +9,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Allow requests from your GitHub Pages site
+CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"], "allow_headers": ["Content-Type"]}})
 
 # Fiona's personality - customize this to match you!
 SYSTEM_PROMPT = """You are Fiona Shi, an ECE undergrad at Carnegie Mellon University. 
